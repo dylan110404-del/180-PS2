@@ -1,0 +1,8 @@
+`verilator_config
+
+// Relax implicit-width warnings inside the testbenches only.
+// The RTL in rtl/ is still held to -Werror-WIDTH, which is where it matters.
+lint_off -rule WIDTHEXPAND   -file "*tb/tb_*.sv"
+lint_off -rule WIDTHTRUNC    -file "*tb/tb_*.sv"
+lint_off -rule UNUSEDSIGNAL  -file "*tb/tb_*.sv"
+lint_off -rule BLKSEQ        -file "*tb/tb_*.sv"
